@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DTO.EntityDTO.DetallarDTO>
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="xs">
+    <h3>Cədvəllər</h3>
+
+    <a asp-controller="Admin" asp-action="ProductAdd" class="btn btn-info">Yeni</a>
+    <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+        <div class="panel-heading">
+            <h2>Menyular Cədvəli</h2>
+            <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+        </div>
+        <div class="panel-body no-padding" style="display: block;">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="warning">
+                        <th>#</th>
+                        <th>Malın adı</th>
+                        <th>Limer</th>
+                        <th>Rəng</th>
+                        <th>En</th>
+                        <th>Hündürlük</th>
+                        <th>Say</th>
+                        <th>Alış Qiyməti</th>
+                        <th>Satış Qiyməti</th>
+                        <th>Ətək</th>
+                        <th>Ətək Rezini</th>
+                        <th>Tük</th>
+                        <th>Mator</th>
+                        <th>Matorun qısa qolu</th>
+                        <th>Matorun uzun qolu</th>
+                        <th>Yan dirəklər</th>
+                        <th>Boru</th>
+                        <th>Qutu</th>
+                        <th>Asqı</th>
+                        <th>Boru qapağı</th>
+                        <th>Pult</th>
+                        <th>Rolik</th>
+                        <th>Tapa</th>
+                        <th>Foto</th>
+                        <th>Redaktə</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Limer</td>
+                            <td>@item.Color</td>
+                            <td>@item.Width</td>
+                            <td>@item.Height</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.GetPrice</td>
+                            <td>@item.SalePrice</td>
+                            <td>@item.Etek</td>
+                            <td>@item.EtekRezini</td>
+                            <td>@item.Tuk</td>
+                            <td>@item.Mator</td>
+                            <td>@item.MatorunQisaQolu</td>
+                            <td>@item.MatorunUzunQolu</td>
+                            <td>@item.YanDirekler</td>
+                            <td>@item.Boru</td>
+                            <td>@item.Qutu</td>
+                            <td>@item.Asqi</td>
+                            <td>@item.BoruQapagi</td>
+                            <td>@item.Pult</td>
+                            <td>@item.Rolik</td>
+                            <td>@item.Tapa</td>
+                            <td style="width:20%"><img src="@item.ImageURL" style="width:100%; height:100%" /></td>                           
+                            <td>
+                                <a asp-controller="Admin" asp-action="ProductUpdate" asp-route-id="@item.Id" class="btn btn-primary">Redaktə</a>
+                            </td>
+                            <td>
+                                <a asp-controller="Admin" asp-action="ProductDelete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

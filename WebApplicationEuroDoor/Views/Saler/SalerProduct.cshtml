@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DTO.EntityDTO.DetallarDTO>
+
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_SalerLayout.cshtml";
+}
+
+
+<div class="xs">
+    <h3>Cədvəllər</h3>
+
+    <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+        <div class="panel-heading">
+            <h2>Menyular Cədvəli</h2>
+            <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+        </div>
+        <a class="btn btn-info" asp-controller="Saler" asp-action="SalerProduct">Refresh</a>
+        <div class="panel-body no-padding" style="display: block;">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="warning">
+                        <th>#</th>
+                        <th>Limer</th>
+                        <th>Malın adı</th>
+                        <th>Rəng</th>
+                        <th>En</th>
+                        <th>Hündürlük</th>
+                        <th>Say</th>
+                        <th>Satış Qiyməti</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Limer</td>
+                            <td>@item.Name</td>
+                            <td>@item.Color</td>
+                            <td>@item.Width</td>
+                            <td>@item.Height</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.SalePrice</td>
+                            <td style="width:20%"><img src="@item.ImageURL" style="width:100%; height:100%" /></td>
+
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,227 @@
+﻿@model DTO.EntityDTO.DetallarDTO
+@{
+    ViewData["Title"] = "ProductAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="xs">
+    <h3>Yeni mal</h3>
+    <div class="tab-content">
+        <div class="tab-pane active" id="horizontal-form">
+            <form method="post" class="form-horizontal">
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Malın adı</label>    
+                    <div class="col-sm-2">
+                        <input type="text" asp-for="Name" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Limer</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Limer" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Rəng</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Color" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">En</label>
+                    <div class="col-sm-8">
+                        <input type="text"  asp-for="Width" class="form-control1" id="focusedinput" placeholder="metr">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Hündürlük</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Height" class="form-control1" id="focusedinput" placeholder="metr">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Say</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Quantity" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Alış Qiyməti</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="GetPrice" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Satış Qiyməti</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="SalePrice" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Ətək</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Etek" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Ətək Rezini</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="EtekRezini" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Tük</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Tuk" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Mator</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Mator" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Matorun qısa qolu</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="MatorunQisaQolu" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Matorun uzun qolu</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="MatorunUzunQolu" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Yan dirəklər</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="YanDirekler" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Boru</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Boru" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Qutu</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Qutu" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Asqı</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Asqi" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Boru qapağı</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="BoruQapagi" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Pult</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Pult" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Rolik</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Rolik" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Tapa</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="Tapa" class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Şəkil</label>
+                    <div class="col-sm-8">
+                        <input type="text" asp-for="ImageURL" class="form-control1" id="focusedinput" placeholder=" ">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> ELave et </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+

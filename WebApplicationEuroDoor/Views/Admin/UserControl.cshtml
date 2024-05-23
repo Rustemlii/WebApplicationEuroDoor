@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DTO.EntityDTO.UserDTO>
+@{
+    ViewData["Title"] = "UserControl";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="xs">
+    <h3>Cədvəllər</h3>
+
+    <a asp-controller="Admin" asp-action="Register" class="btn btn-info">Yeni</a>
+    <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+        <div class="panel-heading">
+            <h2>Menyular Cədvəli</h2>
+            <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+        </div>
+        <div class="panel-body no-padding" style="display: block;">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="warning">
+                        <th>#</th>
+                        <th>İstifadəçi adı</th>
+                        <th>Şifrə</th>
+                        <th>Status</th>                     
+                        <th>Redaktə</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>                         
+                            <td>@item.UserName</td>
+                            <td>@item.Password</td>
+                            <td>@item.Role.Name</td>                        
+                            <td>
+                                <a asp-controller="Admin" asp-action="UserUpdate" asp-route-id="@item.Id" class="btn btn-primary">Redaktə</a>
+                            </td>
+                            <td>
+                                <a asp-controller="Admin" asp-action="UserDelete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

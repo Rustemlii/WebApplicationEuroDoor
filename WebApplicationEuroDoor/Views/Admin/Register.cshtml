@@ -1,0 +1,21 @@
+﻿@model DTO.EntityDTO.UserDTO
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<body id="login">
+    <h2 class="form-heading">Qeydiyyat</h2>
+    <form method="post" class="form-signin app-cam">
+
+        <p>Yeni istifadəçi əlavə et</p>
+        <input type="text" asp-for="UserName" class="form-control1" placeholder="İstifadəçi adı" autofocus="">
+        <input type="text" asp-for="Password" class="form-control2" placeholder="Parol" autofocus="">
+        <div class="radios">
+            @Html.DropDownListFor(x => x.RoleId, (IEnumerable<SelectListItem>)ViewBag.c, new { @class = "form-control1 ng-invalid ng-invalid-required ng-touched" })
+        </div>
+        <button class="btn btn-lg btn-success1 btn-block" type="submit">Əlavə et</button>
+
+    </form>
+</body>
+

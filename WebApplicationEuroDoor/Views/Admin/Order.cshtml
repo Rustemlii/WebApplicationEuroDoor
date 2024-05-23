@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DTO.EntityDTO.OrderDTO>
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="xs">
+    <h3>Cədvəllər</h3>
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+           Sifariş Nümunəsi
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            @foreach(var item in ViewBag.demo)
+            {
+                <li><a asp-controller="Admin" asp-action="OrderAdd" asp-route-id="@item.Id">@item.Name</a></li>
+            }
+        </ul>
+    </div>
+
+    <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+        <div class="panel-heading">
+            <h2>Menyular Cədvəli</h2>
+            <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+        </div>
+        <div class="panel-body no-padding" style="display: block;">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="warning">
+                        <th>#</th>
+                        <th>Sifarişin adı</th>
+                        <th>Qiymət</th>
+                        <th>Satıcı</th>     
+                        <th>Müştəri</th>     
+                        <th>Redaktə</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Price</td>
+                            <td>@item.Saler</td>
+                            <td>@item.Customer</td>
+                            <td>
+                                <a asp-controller="Admin" asp-action="ProductUpdate" asp-route-id="@item.Id" class="btn btn-primary">Redaktə</a>
+                            </td>
+                            <td>
+                                <a asp-controller="Admin" asp-action="ProductDelete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

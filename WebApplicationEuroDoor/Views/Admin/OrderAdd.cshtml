@@ -1,0 +1,59 @@
+﻿@model DTO.EntityDTO.OrderDTO
+@{
+    ViewData["Title"] = "OrderAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="xs">
+    <h3>Yeni mal</h3>
+    <div class="tab-content">
+        <div class="tab-pane active" id="horizontal-form">
+            <form method="post" class="form-horizontal">
+
+                <input type="hidden" asp-for="Id" value="" />
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Sifarişin adı</label>
+                    <div class="col-sm-2">
+                        <input type="text" asp-for="Name" value="@ViewBag.demo1.Name"  class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Satıcı</label>
+                    <div class="col-sm-2">
+                        <input type="text" asp-for="Saler" value="@ViewBag.demo1.Saler"  class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Müştəri</label>
+                    <div class="col-sm-2">
+                        <input type="text" asp-for="Customer" value="@ViewBag.demo1.Customer"  class="form-control1" id="focusedinput" placeholder="">
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="form-group">
+                    <button type="submit"  class="btn btn-primary"> ELave et </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
